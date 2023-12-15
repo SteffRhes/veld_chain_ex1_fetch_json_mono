@@ -1,21 +1,9 @@
 
-
-# classical docker compose stuff
 services:
-
   veld:
-
-    extends:
-
-      file: ./veld_executable_ex1_fetch_json/veld.yaml
-
-      service: veld
-
+    build: .
     volumes:
-
       - ./veld_data_ex1_json/:/veld/output/
-
     environment:
-
       id: "51"
-
+    command: sh -c 'echo YYY > /veld/output/data.json'
